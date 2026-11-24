@@ -1,10 +1,9 @@
 
 import type { ListeningStory } from "./listening-types";
-
-import { stories20252026 } from "./stories/2025-2026";
+import { originalStories } from "./stories/original-stories";
 
 export const listeningStories: ListeningStory[] = [
-  ...stories20252026,
+  ...originalStories,
 ];
 
 export function getListeningStory(id: string) {
@@ -16,7 +15,5 @@ export function getStoriesByYear(year: string) {
 }
 
 export function getAvailableYears() {
-  return [...new Set(listeningStories.map((story) => story.year))]
-    .sort()
-    .reverse();
+  return [...new Set(listeningStories.map((story) => story.year))];
 }
